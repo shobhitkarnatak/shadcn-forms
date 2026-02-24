@@ -1,7 +1,7 @@
 const Templates = () => {
   return (
     <div>
-      Tenplates
+      Templates
     </div>
   )
 }

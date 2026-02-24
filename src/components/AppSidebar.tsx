@@ -9,7 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const mainItems = [
   { title: "Components", url: "/components", icon: Component },
@@ -18,24 +18,25 @@ const mainItems = [
   { title: "FormArray", url: "/formarray", icon: ScrollText },
 ];
 
+
 export function AppSidebar() {
+  const location = useLocation();
   return (
     <Sidebar collapsible="icon">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarHeader className="text-sm font-bold">
-              shadcn ui
             </SidebarHeader>
             <SidebarMenu>
               {mainItems?.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild tooltip={item.title}>
+                  <SidebarMenuButton asChild tooltip={item.title} className={location.pathname === item.url ? "bg-blue-200 text-sidebar-accent-foreground" : ""}>
                     <Link
                       to={item.url}
-                      className="flex items-center gap-3 px-3 py-4 text-black hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                      className="flex items-center gap-3 px-3 py-4 text-black"
                     >
-                      <item.icon className="h-4 w-4 shrink-0 text-black" />
+                      <item.icon className="text-black" />
                       <span className="text-black font-normal ">
                         {item.title}
                       </span>
