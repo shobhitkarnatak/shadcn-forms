@@ -573,7 +573,7 @@ const Components = () => {
 
                           <SelectContent>
                             {experienceDetails?.companyEmails?.map((item: any) => (
-                              <SelectItem key={item.id} value={item.email}>{item.email}</SelectItem>
+                              <SelectItem key={item.id + 1} value={item.email}>{item.email}</SelectItem>
                             ))}
                           </SelectContent>
                         </Select>
@@ -651,10 +651,10 @@ const Components = () => {
             ))}
           </div>
         </div>
-        <Button type="submit" className="my-8 float-right">Submit</Button>
+        <Button type="submit" className="my-8 float-right cursor-pointer">Submit</Button>
       </form>
-    </Form >
-  );
+    </Form>
+  )
 };
 
 export default Components;

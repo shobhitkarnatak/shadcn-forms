@@ -9,8 +9,8 @@ export default function AppHeader() {
 
   useEffect(() => {
     for (let i = 0; i <= 4; i++) {
-      if (location.pathname.includes(HeaderInformation[i].name)) {
-        setHeaderInfo(HeaderInformation[i].text);
+      if (location?.pathname?.includes(HeaderInformation[i]?.name)) {
+        setHeaderInfo(HeaderInformation[i]?.text);
         break;
       }
     }
