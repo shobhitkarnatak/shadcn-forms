@@ -61,7 +61,7 @@ const Components = () => {
     defaultValues: {
       username: "",
       age: "",
-      role: responseData.role.toString() || "",
+      role: responseData.role.toString() || '',
       description: "",
       gender: "",
       notifications: false,
@@ -112,7 +112,7 @@ const Components = () => {
 
 
   const onSubmit = (data: z.infer<typeof ComponentSchema>) => {
-    console.log(data);
+    console.log("data", data);
   };
 
   const appendRow = () => {

@@ -98,7 +98,7 @@ export const experienceDetails = {
 
 export const responseData = {
   username: "Shobhit Karnatak",
-  role: 103,
+  role: "103",
   age: "30-35",
   gender: "Male",
   notifications: true,
