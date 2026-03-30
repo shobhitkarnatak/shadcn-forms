@@ -167,7 +167,7 @@ const Components = () => {
                   <FormItem>
                     <FormLabel>Select Role*</FormLabel>
                     <Select
-                      onValueChange={(value) => field.onChange(Number(value))}
+                      onValueChange={(value) => field.onChange(value)}
                       value={field.value.toString()}
 
                     >

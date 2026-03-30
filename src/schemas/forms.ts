@@ -3,7 +3,7 @@ import z from "zod";
 const baseSchema = z.object({
   type: z.enum(["family", "others"]),
   name: z.string().min(1, "Name is required"),
-  age: z.number().min(1, "Age must be valid"),
+  age: z.string().min(1, "Age must be valid"),
   relation: z.string().min(1, "Relation is required"),
   location: z.string().min(1, "Location is required"),
 });

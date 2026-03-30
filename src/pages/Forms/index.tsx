@@ -28,16 +28,17 @@ const Forms = () => {
     defaultValues: {
       type: "family",
       name: "",
-      age: 0,
+      age: "",
     },
   })
 
   const selectedType = form.watch("type")
-  console.log("Selected Type", selectedType)
+  const selectedAgeId = form.watch("age");
+  console.log("Selected", selectedAgeId, selectedType)
 
   useEffect(() => {
 
-  }, [])
+  }, [age])
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     console.log(data);
@@ -116,9 +117,8 @@ const Forms = () => {
                     <FormItem>
                       <FormLabel>Age*</FormLabel>
                       <Select
-                        onValueChange={(value) => field.onChange(Number(value))}
-                        value={field.value.toString()}
-
+                        onValueChange={(value) => form.setValue("age", value)}
+                        value={field.value}
                       >
                         <FormControl>
                           <SelectTrigger>
@@ -150,7 +150,7 @@ const Forms = () => {
                     <FormItem>
                       <FormLabel>Relation*</FormLabel>
                       <Select
-                        onValueChange={(value) => field.onChange(Number(value))}
+                        onValueChange={(value) => field.onChange(value)}
                         value={field.value}
                       >
                         <FormControl>
@@ -183,7 +183,7 @@ const Forms = () => {
                     <FormItem>
                       <FormLabel>Location*</FormLabel>
                       <Select
-                        onValueChange={(value) => field.onChange(Number(value))}
+                        onValueChange={(value) => field.onChange(value)}
                         value={field.value}
 
                       >
@@ -218,7 +218,7 @@ const Forms = () => {
                       <FormItem>
                         <FormLabel>Occupation*</FormLabel>
                         <Select
-                          onValueChange={(value) => field.onChange(Number(value))}
+                          onValueChange={(value) => field.onChange(value)}
                           value={field.value}
                         >
                           <FormControl>
@@ -267,7 +267,7 @@ const Forms = () => {
 
               {selectedType.toLocaleLowerCase() == "others" && (
                 <>
-                  < div >
+                  <div>
                     <FormField
                       control={form.control}
                       name="category"
@@ -275,7 +275,7 @@ const Forms = () => {
                         <FormItem>
                           <FormLabel>Category*</FormLabel>
                           <Select
-                            onValueChange={(value) => field.onChange(Number(value))}
+                            onValueChange={(value) => field.onChange(value)}
                             value={field.value}
                           >
                             <FormControl>
